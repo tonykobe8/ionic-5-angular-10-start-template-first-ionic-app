@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
  { path: '' , component:LoginComponent},
+ { path: 'login' , component:LoginComponent},
  {path:'register' ,component:RegisterComponent}
 ];
 @NgModule({
