@@ -1,9 +1,33 @@
 
-<ion-button  color="secondary">add</ion-button>
-<div  *ngFor="let todo of todo_list"><ion-button 
+
+
+<ion-list>
+ <ion-item text-wrap>
+  
+ <ion-label color="primary" stacked>Content :</ion-label>
+   <ion-input type="text"  ></ion-input>
+ </ion-item>
+ <ion-item>
+ <ion-label color="primary" stacked>status :</ion-label>
+   <ion-input type="status" ></ion-input>
+ </ion-item>
+ <ion-item>
+ <ion-label color="primary" stacked>priority :</ion-label>
+   <ion-input type="content" ></ion-input>
+ </ion-item>
+  <ion-item >
+  <ion-button  color="secondary">add task</ion-button>
+  </ion-item>
+<div *ngFor="let todo of todo_list">
+<ion-item>
 {{todo.content}}
 {{todo.status}}
 {{todo.priority}}
 <ion-button color="secondary">edit</ion-button>
 <ion-button  color="danger" (click)="delete(todo)" >delete</ion-button>
+</ion-item>
 </div>
+</ion-list>
+
+
+
