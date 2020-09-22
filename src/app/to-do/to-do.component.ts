@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ToDoComponent implements OnInit {
 
   constructor() { }
-  todo_list=[{content:'fghgfggf',status:'hgfhghg',priority:'ytyyt'}];
+  todo_list=[{content:'fghgfggf',status:'hgfhghg',priority:'ytyyt'},{content:'123',status:'2345',priority:'0087'}];
 
   ngOnInit() {
   }
