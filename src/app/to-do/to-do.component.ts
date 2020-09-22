@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
- task_list = [];
+ 
 content: string;
 status: string;
 priority: string;
-
+taskList = [];
 constructor() { }
-todo_list=[{content:'fghgfggf',status:'hgfhghg',priority:'ytyyt'},{content:'123',status:'2345',priority:'0087'}];
+todo_list=[{content:'hh'}];
 
 
  delete(todo){
@@ -21,17 +21,14 @@ if(index > -1){
  this.todo_list.splice(index,1) ;
 }
  }
-addTask(){
- if (this.content.length > 0) {
-    let todo = this.content;
-this.task_list.push(todo);
-    this.content = " "; 
-            
 
+ addTask() {
+if (this.content.length > 0) {
+let todo = this.content;
+this.todo_list.push(todo);
+this.content = "";
 }
-
 }
-
 
 ngOnInit() {
 
