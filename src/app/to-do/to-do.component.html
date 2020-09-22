@@ -1,12 +1,9 @@
 
- 
-<div  *ngFor="let todo of todo_list">
+color="secondary">add</ion-button>
+<div  *ngFor="let todo of todo_list"><ion-button 
 {{todo.content}}
 {{todo.status}}
 {{todo.priority}}
 <ion-button color="secondary">edit</ion-button>
-<ion-button  color="danger">delete</ion-button>
+<ion-button  color="danger" (click)="delete(todo)" >delete</ion-button>
 </div>
-
-     
-  
