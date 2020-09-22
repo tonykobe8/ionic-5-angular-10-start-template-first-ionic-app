@@ -8,10 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ToDoComponent } from './to-do/to-do.component';
 
+
+import { FormsModule } from '@angular/forms';
+
+
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, ToDoComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
