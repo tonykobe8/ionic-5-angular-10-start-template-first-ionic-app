@@ -1,21 +1,19 @@
 
 <ion-list>
  <ion-item text-wrap>
-
-  <ion-label color="primary" stacked>Content :</ion-label>
-   <ion-input type="text" [(ngModel)]="content" ></ion-input>
+<ion-label color="primary" stacked>Content :</ion-label>
+<ion-input type="text" [(ngModel)]="content" ></ion-input>
  </ion-item>
  <ion-item>
  <ion-label color="primary" stacked>status :</ion-label>
-   <ion-input type="text"  [(ngModel)]="status"></ion-input>
+<ion-input type="text"  [(ngModel)]="status"></ion-input>
  </ion-item>
  <ion-item>
  <ion-label color="primary" stacked>priority :</ion-label>
    <ion-input type="text" [(ngModel)]="priority"></ion-input>
  </ion-item>
   <ion-item >
-  <ion-button type="submit" color="secondary" (click)="addTask(todo)" >add task</ion-button>
-  
+  <ion-button type="submit" color="secondary" (click)="addTask()" >add task</ion-button>
   </ion-item>
 <div *ngFor="let todo of todo_list">
 <ion-item>
@@ -26,10 +24,7 @@
 <ion-button  color="danger" (click)="delete(todo)" >delete</ion-button>
 </ion-item>
 </div>
-<ion-item>
-<ion-item *ngFor="let todo of task_list">
-{{todo}}
-</ion-item>	
+	
 	
 
 

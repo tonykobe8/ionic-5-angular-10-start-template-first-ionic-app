@@ -10,22 +10,20 @@ export class ToDoComponent implements OnInit {
 content: string;
 status: string;
 priority: string;
-taskList = [];
+
 constructor() { }
-todo_list=[{content:'hh'}];
+todo_list=[{content:'hhhhh',status:'not done',priority:'hhhhhh'},
+{content:'bbhh',status:'done',priority:'ggghh'}];
 
 
- delete(todo){
-const index = this.todo_list.indexOf(todo,0);
-if(index > -1){
- this.todo_list.splice(index,1) ;
+ delete(index){
+this.todo_list.splice(index,1) ;
 }
- }
 
  addTask() {
 if (this.content.length > 0) {
 let todo = this.content;
-this.todo_list.push(todo);
+this.todo_list.push();
 this.content = "";
 }
 }
