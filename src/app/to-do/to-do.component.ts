@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
+
  
-content: string;
-status: string;
-priority: string;
+
 
 constructor() { }
 todo_list=[{content:'hhhhh',status:'not done',priority:'hhhhhh'},
@@ -21,12 +20,10 @@ this.todo_list.splice(index,1) ;
 }
 
  addTask() {
-if (this.content.length > 0) {
-let todo = this.content;
-this.todo_list.push();
-this.content = "";
-}
-}
+ 
+ }
+
+
 
 ngOnInit() {
 
