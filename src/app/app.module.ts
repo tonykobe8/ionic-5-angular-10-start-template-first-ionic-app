@@ -10,6 +10,7 @@ import { ToDoComponent } from './to-do/to-do.component';
 
 
 import { FormsModule } from '@angular/forms';
+import { ToDoService } from './to-do.service';
 
 
 
@@ -18,7 +19,7 @@ import { FormsModule } from '@angular/forms';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, providers: [ToDoService] }
   ],
   bootstrap: [AppComponent]
 })
