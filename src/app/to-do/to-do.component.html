@@ -1,5 +1,6 @@
 
 <ion-list>
+  <h1 >Add todo list :</h1>
  <ion-item text-wrap>
 <ion-label color="primary" stacked>Content :</ion-label>
 <ion-input type="text" [(ngModel)]="content" ></ion-input>
@@ -13,8 +14,10 @@
    <ion-input type="text" [(ngModel)]="priority"></ion-input>
  </ion-item>
   <ion-item >
-  <ion-button type="submit" color="secondary" (click)="addTask()" >add task</ion-button>
-  </ion-item>
+    <ion-icon name="add-circle-outline" color="success" (click)="addTask()"></ion-icon>
+<ion-label color="success">Add </ion-label>
+</ion-item>
+<h1>Todo list :</h1>
 <div *ngFor="let todo of todo_list">
 <ion-item>
 {{todo.content}}

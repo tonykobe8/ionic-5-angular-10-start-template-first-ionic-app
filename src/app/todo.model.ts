@@ -1,6 +1,6 @@
-export interface Todo {
-    Id: number;
-  content:string;
- status: string;
- priority:string; 
+export class todo{
+content:string;
+status: string;
+priority:string;
+
 }
