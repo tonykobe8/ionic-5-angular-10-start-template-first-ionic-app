@@ -21,15 +21,15 @@
 <div *ngFor="let todo of todo_list">
   
 <ion-item>
-{{todo.content}} 
-{{todo.status}}
-{{todo.priority}}
+<p>{{todo.content}} </p>&nbsp;&nbsp;
+<p>{{todo.status}} </p>&nbsp;&nbsp;
+<p>{{todo.priority}} </p>&nbsp;&nbsp;
 
-<ion-icon name="pencil-outline" color="secondary" size="small"></ion-icon> &nbsp;&nbsp;
+<ion-icon name="pencil-outline" color="secondary" size="small"
+(click)="updateTask(index)"></ion-icon> &nbsp;&nbsp;
 <ion-icon name="trash-outline" color="danger" (click)="delete(todo)" size="small" ></ion-icon>
 </ion-item>
- 
-   </div> 
+</div> 
 
 
 

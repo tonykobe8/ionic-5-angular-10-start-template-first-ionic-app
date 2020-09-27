@@ -12,6 +12,7 @@ status:string;
 priority:string;
 todo_list:Array<todo> =[{content:'hhhhh',status:'not done',priority:'kkkk'},
 {content:'bbhh',status:'done',priority:'ggggg'}];
+alertCtrl: any;
 constructor() { }
 
 delete(index){
@@ -22,10 +23,18 @@ ngOnInit() {
 }
 
 addTask(){
-   //console.log(this.content,this.status);
+//console.log(this.content,this.status,this.priority);
    this.todo_list.push({content:this.content,status:this.status,priority:this.priority});
    this.content="";
    this.status="";
    this.priority="";
    }
+
+
+updateTask(index){
+//console.log(this.content,this.status,this.priority);
+  console.log("fff")
+}
+
+
 }
