@@ -19,16 +19,17 @@
 </ion-item>
 <h1>Todo list :</h1>
 <div *ngFor="let todo of todo_list">
+  
 <ion-item>
-{{todo.content}}
+{{todo.content}} 
 {{todo.status}}
 {{todo.priority}}
-<ion-icon name="pencil-outline" color="secondary" size="small"></ion-icon>
+
+<ion-icon name="pencil-outline" color="secondary" size="small"></ion-icon> &nbsp;&nbsp;
 <ion-icon name="trash-outline" color="danger" (click)="delete(todo)" size="small" ></ion-icon>
 </ion-item>
-</div>
-	
-	
+ 
+   </div> 
 
 
 
