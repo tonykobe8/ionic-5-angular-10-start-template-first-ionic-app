@@ -12,9 +12,7 @@ getData() {
     return this.todo_list;
 }
 updateTask(todo: Todo){
-  console.log(todo.Id);
-  
-     const index = this.todo_list.findIndex(c => c.Id === todo.Id);
+  const index = this.todo_list.findIndex(c => c.Id === todo.Id);
     console.log(index);
     this.todo_list[index] = todo;
 

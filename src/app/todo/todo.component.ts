@@ -42,15 +42,18 @@ header: 'update task?',
 inputs: [{
 name: 'content',
 type: 'text',
+
 placeholder: 'Content'
 },{
 name: 'status',
 type: 'text',
+
 placeholder: 'Status'
 },{
 name: 'priority',
 type: 'text',
-placeholder: 'Priority'
+placeholder: 'Priority',
+
 }],
 
 
