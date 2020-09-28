@@ -6,16 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ToDoComponent } from './to-do/to-do.component';
+
 import { FormsModule } from '@angular/forms';
+import { TodoService } from './todo.service';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, ToDoComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent,  TodoComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, providers: [TodoService]}
   ],
   bootstrap: [AppComponent]
 })
