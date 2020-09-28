@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 import { TodoService } from './todo.service';
 import { AlertController } from '@ionic/angular';
-
+import { TodoService } from '../todo.service';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
