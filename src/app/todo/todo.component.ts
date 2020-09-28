@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { todo } from '../todo';
+import { Todo } from '../todo';
+import { TodoService } from './todo.service';
 import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -11,14 +13,18 @@ Id: any;
 content:string;
 status:string;
 priority:string;
-todo_list:Array<todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
+todo_list:Array<Todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
 {Id:2,content:'bbhh',status:'done',priority:'ggggg'}];
-constructor(public alertController: AlertController) { }
+constructor(private todoService: TodoService,
+public alertController: AlertController) { }
 delete(index){
 this.todo_list.splice(index,1) ;
 }
 ngOnInit() {
     }
+    get AllTodoList() {
+    return this.todoService.getData();
+  }
 addTask(){
 //console.log(this.content,this.status,this.priority);
    this.todo_list.push({Id:this.Id,content:this.content,status:this.status,priority:this.priority});
@@ -28,7 +34,8 @@ addTask(){
    this.priority="";
    }
  
-async updateTask() {
+async updateTask(Id: any) {
+const todo = this.todoService.getData().find(c => c.Id === Id);
 const alert = await this.alertController.create({
 cssClass: 'my-custom-class',
 header: 'update task?',

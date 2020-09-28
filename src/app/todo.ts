@@ -1,4 +1,4 @@
-export class todo{
+export class Todo{
  Id:any;
 content:string;
 status: string;
