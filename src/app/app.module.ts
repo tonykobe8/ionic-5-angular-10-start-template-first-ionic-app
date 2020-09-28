@@ -7,12 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ToDoComponent } from './to-do/to-do.component';
-
-
 import { FormsModule } from '@angular/forms';
-import { ToDoService } from './to-do.service';
-
-
 
 
 @NgModule({
@@ -20,7 +15,7 @@ import { ToDoService } from './to-do.service';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, providers: [ToDoService]}
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent]
 })

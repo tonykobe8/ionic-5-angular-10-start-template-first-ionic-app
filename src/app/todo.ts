@@ -1,5 +1,5 @@
 export class todo{
- Id ; 
+ Id:any;
 content:string;
 status: string;
 priority:string;

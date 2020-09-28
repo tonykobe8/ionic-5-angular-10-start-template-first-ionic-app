@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { todo } from '../to-do';
+import { Component,NgZone, OnInit } from '@angular/core';
+import { todo } from '../todo';
+import { NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
 
 @Component({
   selector: 'app-to-do',
@@ -13,12 +14,13 @@ status:string;
 priority:string;
 todo_list:Array<todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
 {Id:2,content:'bbhh',status:'done',priority:'ggggg'}];
+ngZone: any;
+alertCtrl: any;
 constructor() { }
 delete(index){
 this.todo_list.splice(index,1) ;
 }
 ngOnInit() {
-    
     }
 
 addTask(){
@@ -29,8 +31,37 @@ addTask(){
    this.status="";
    this.priority="";
    }
-   updateTask(index){
- 
+  public updateTask(inde) {
+    let alert = this.alertCtrl.create({
+      title: 'Change grocery item name:',
+      message: '',
+      inputs: [
+        {
+          placeholder: 'type in a new name'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        },
+        {
+          text: 'Confirm',
+          handler: data => {
+            if (data[0].length === 0) {
+              this.todo_list[index] = currentName;
+            } else {
+              this.todo_list[index] = data[0];
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
+  };
 
-}
+  public addItem() {
+    let index = this.todo_list.length;
+    this.updateTask("New item", index);
+  }
 }
