@@ -1,5 +1,9 @@
 import { Component,  NgZone,  OnInit } from '@angular/core';
-import { todo } from '../todo.model';
+import { todo } from '../to-do';
+
+import { ToDoService } from './to-do.service';
+
+
 
 @Component({
   selector: 'app-to-do',
@@ -18,13 +22,14 @@ todo_list:Array<todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'}
 
  
 
-constructor(private zone: NgZone) { }
+constructor(private todoService: ToDoService) { }
 
 delete(index){
 this.todo_list.splice(index,1) ;
 }
 
 ngOnInit() {
+    this.todoService.getData();
 }
 
 addTask(){
@@ -36,21 +41,7 @@ addTask(){
    this.priority="";
    }
    updateTask(index){
-  this.zone.run(() => {
-  let index = this.todo_list.map(x => this.Id).indexOf(todo[0].Id);
-  let newItem = {
-    Id:todo[0].Id,
-    content: todo[0].content,
-    status: todo[0].status,
-    priority: todo[0].priority,
-    } 
-   if (index !== -1) {
-    this.todo_list.push(newItem);
-  } else {
-    this.todo_list[index] = newItem;
-       }
-});
-
+ 
 
 }
 }
