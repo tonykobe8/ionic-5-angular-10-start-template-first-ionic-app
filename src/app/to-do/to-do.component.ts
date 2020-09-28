@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { todo } from '../to-do';
-import { ToDoService } from './to-do.service';
+
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -18,7 +18,7 @@ delete(index){
 this.todo_list.splice(index,1) ;
 }
 ngOnInit() {
-    this.todoService.getData();
+    
     }
 
 addTask(){
