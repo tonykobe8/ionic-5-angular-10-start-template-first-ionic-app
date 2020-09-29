@@ -15,6 +15,10 @@ status:string;
 priority:string;
 todo_list:Array<Todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
 {Id:2,content:'bbhh',status:'done',priority:'ggggg'}];
+
+
+
+
 constructor(
 public alertController: AlertController) { }
 delete(index){
@@ -31,19 +35,26 @@ addTask(){
    }
  
 
-async updateTask(index) {
-  let input={todo_list:[]};
-input.todo_list.push({Id:this.Id,content:this.content,status:this.status,priority:this.priority});
+
+async updateTask(currentName,todo,index) {
 const alert = await this.alertController.create({
-        cssClass: 'secondary',
+cssClass: 'secondary',
 header: 'update task?',
-        inputs: [{  name:"content" , placeholder:'content' },
-        {name:'status',placeholder:'status'},
-        {name: 'priority', placeholder: 'priority'}],
+
+        inputs: [{ name:'content', value:todo.content , placeholder:'content' },
+        {name:'status',value:todo.status ,placeholder:'status'},
+        {name: 'priority',value:todo.priority, placeholder: 'priority'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
-                  { text: 'Update', handler: todo => {
-                  this.todo_list[index] = todo.editTask;  }
-                  }]
+                  { text: 'Update', handler: data => {
+
+if (data[0].length == 0) {
+this.todo_list[index] = currentName;
+} else {
+this.todo_list[index] = data[0];  
+ }
+          }
+        }
+      ]
     });
     alert.present();
 }
