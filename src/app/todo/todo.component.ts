@@ -26,51 +26,24 @@ ngOnInit() {
 addTask(){
 //console.log(this.content,this.status,this.priority);
    this.todo_list.push({Id:this.Id,content:this.content,status:this.status,priority:this.priority});
-   this.Id="";
-   this.content="";
-   this.status="";
+   this.Id=""; this.content=""; this.status="";
    this.priority="";
    }
  
-async updateTask(i) {
-const alert = await this.alertController.create({
-cssClass: 'my-custom-class',
+
+async updateTask(index) {
+
+let alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
 header: 'update task?',
-inputs: [{
-name: 'content',
-type: 'text',
-content:this.content,
-placeholder: 'Content'
-},{
-name: 'status',
-type: 'text',
-status:this.status,
-placeholder: 'Status'
-},{
-name: 'priority',
-type: 'text',
-priority:this.priority,
-placeholder: 'Priority'
-
-}],
-
-
-
-buttons: [{
-text: 'Cancel',
-role: 'cancel',
-cssClass: 'secondary',
-handler: () => {
-this.todo_list;
+        inputs: [{ content:this.content,  placeholder:'content' },
+        {name:'status',placeholder:'status'},
+        {name: 'priority', placeholder: 'priority'}],
+        buttons: [{ text: 'Cancel', role: 'cancel' },
+                  { text: 'Update', handler: todo => {
+                  this.todo_list[index] = todo.editTask;  }
+                  }]
+    });
+    alert.present();
 }
-}, {
-text: 'update',
-handler: () => {
-console.log('Confirm Ok');
-}
-}]
-});
-await alert.present();
-}
-
 }
