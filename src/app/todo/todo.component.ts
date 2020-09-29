@@ -36,19 +36,19 @@ addTask(){
  
 
 
-async updateTask(currentName,todo,index) {
+async updateTask(todo,index) {
 const alert = await this.alertController.create({
 cssClass: 'secondary',
 header: 'update task?',
 
-        inputs: [{ name:'content', value:todo.content , placeholder:'content' },
-        {name:'status',value:todo.status ,placeholder:'status'},
-        {name: 'priority',value:todo.priority, placeholder: 'priority'}],
+        inputs: [{  value:todo.content , placeholder:'content' },
+        {value:todo.status ,placeholder:'status'},
+        {value:todo.priority, placeholder: 'priority'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler: data => {
 
 if (data[0].length == 0) {
-this.todo_list[index] = currentName;
+this.todo_list[index] = todo;
 } else {
 this.todo_list[index] = data[0];  
  }
