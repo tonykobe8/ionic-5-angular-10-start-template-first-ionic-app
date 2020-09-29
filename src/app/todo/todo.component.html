@@ -13,17 +13,15 @@
    <ion-input type="text" [(ngModel)]="priority"></ion-input>
  </ion-item>
   <ion-item >
-    <ion-icon name="add-circle-outline" color="success" (click)="addTask()"></ion-icon>
+<ion-icon name="add-circle-outline" color="success" (click)="addTask()"></ion-icon>
 <ion-label color="success">Add </ion-label>
 </ion-item>
 <h1>Todo list :</h1>
 <div *ngFor="let todo of todo_list ;let i = index">
-  
 <ion-item>
 <p>{{todo.content}} </p>&nbsp;&nbsp;
 <p>{{todo.status}} </p>&nbsp;&nbsp;
 <p>{{todo.priority}} </p>&nbsp;&nbsp;
-
 <ion-icon name="pencil-outline" color="secondary" size="small"
 (click)="updateTask(i)"></ion-icon> &nbsp;&nbsp;
 <ion-icon name="trash-outline" color="danger" (click)="delete(i)" size="small" ></ion-icon>

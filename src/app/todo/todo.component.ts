@@ -15,16 +15,14 @@ status:string;
 priority:string;
 todo_list:Array<Todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
 {Id:2,content:'bbhh',status:'done',priority:'ggggg'}];
-constructor(private todoService: TodoService,
+constructor(
 public alertController: AlertController) { }
 delete(index){
 this.todo_list.splice(index,1) ;
 }
 ngOnInit() {
     }
-    get AllTodoList() {
-    return this.todoService.getData();
-  }
+  
 addTask(){
 //console.log(this.content,this.status,this.priority);
    this.todo_list.push({Id:this.Id,content:this.content,status:this.status,priority:this.priority});
@@ -34,25 +32,25 @@ addTask(){
    this.priority="";
    }
  
-async updateTask(Id: any) {
-const todo = this.todoService.getData().find(c => c.Id === Id);
+async updateTask(i) {
 const alert = await this.alertController.create({
 cssClass: 'my-custom-class',
 header: 'update task?',
 inputs: [{
 name: 'content',
 type: 'text',
-
+content:this.content,
 placeholder: 'Content'
 },{
 name: 'status',
 type: 'text',
-
+status:this.status,
 placeholder: 'Status'
 },{
 name: 'priority',
 type: 'text',
-placeholder: 'Priority',
+priority:this.priority,
+placeholder: 'Priority'
 
 }],
 
