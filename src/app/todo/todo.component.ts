@@ -32,11 +32,12 @@ addTask(){
  
 
 async updateTask(index) {
-
-let alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
+  let input={todo_list:[]};
+input.todo_list.push({Id:this.Id,content:this.content,status:this.status,priority:this.priority});
+const alert = await this.alertController.create({
+        cssClass: 'secondary',
 header: 'update task?',
-        inputs: [{ content:this.content,  placeholder:'content' },
+        inputs: [{  name:"content" , placeholder:'content' },
         {name:'status',placeholder:'status'},
         {name: 'priority', placeholder: 'priority'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
