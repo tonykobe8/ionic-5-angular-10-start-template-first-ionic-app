@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 
 import { TodoComponent } from './todo/todo.component';
+import { TodoService } from './todo.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { TodoComponent } from './todo/todo.component';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
   providers: [
-  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, providers: [TodoService]}
   ],
   bootstrap: [AppComponent]
 })

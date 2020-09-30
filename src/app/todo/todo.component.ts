@@ -39,17 +39,13 @@ const alert = await this.alertController.create({
 cssClass: 'secondary',
 header: 'update task?',
 
-        inputs: [{  value:todo.content , placeholder:'content' },
-        {value:todo.status ,placeholder:'status'},
-        {value:todo.priority, placeholder: 'priority'}],
+        inputs: [{ name:'content', value:todo.content , placeholder:'content' },
+        {name:'status',value:todo.status ,placeholder:'status'},
+        {name:'priority',value:todo.priority, placeholder: 'priority'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
-                  { text: 'Update', handler: data => {
+                  { text: 'Update', handler: (todo) => {
+ this.todo_list[index] = todo;
 
-if (data[0].length == 0) {
-this.todo_list[index] = todo;
-} else {
-this.todo_list[index] = data[0];  
- }
           }
         }
       ]
