@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -13,7 +11,7 @@ Id: any;
 content:string;
 status:string;
 priority:string;
-todo_list:Array<Todo> =[{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
+todo_list = [{Id:1,content:'hhhhh',status:'not done',priority:'kkkk'},
 {Id:2,content:'bbhh',status:'done',priority:'ggggg'}];
 
 
